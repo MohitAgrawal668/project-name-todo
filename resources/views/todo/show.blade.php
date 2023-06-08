@@ -15,6 +15,9 @@
                 </div>
                 <a href="{{ route('todo.edit', ['id' => $todo->id]) }}"><button class="btn btn-primary btn-sm my-2">Edit Todo</button></a>
                 <a href="{{ route('todo.delete', ['id' => $todo->id]) }}"><button class="btn btn-danger btn-sm my-2">Delete</button></a>
+                @if($todo->completed == false)
+                    <a href="{{ route('todo.complete', ['id' => $todo->id]) }}"><button class="btn btn-success btn-sm my-2">Complete Todo</button></a>
+                @endif    
             </div>
         </div>
     </div>

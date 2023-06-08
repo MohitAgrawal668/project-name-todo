@@ -31,3 +31,5 @@ Route::get("todo/{id}/edit",[TodoController::class, "edit"])->name("todo.edit");
 
 Route::post("todo/{id}/update",[TodoController::class, "update"])->name("todo.update");
 Route::get("todo/{id}/delete",[TodoController::class, "destroy"])->name("todo.delete");
+
+Route::get("todo/{id}/complete",[TodoController::class, "complete"])->name("todo.complete");

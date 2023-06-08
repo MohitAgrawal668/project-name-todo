@@ -86,5 +86,16 @@ class TodoController extends Controller
             $todo = Todo::find($id);
             $todo->delete();
             return redirect("todo");
+        } 
+        
+    public function complete($id)
+        {
+            $todo = Todo::find($id);
+            $todo->completed = true;
+            $todo->save();
+            
+            session()->flash("success","Task completed successfully.");
+
+            return redirect("todo/show/$id");
         }    
 }
